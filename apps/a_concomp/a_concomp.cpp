@@ -195,6 +195,10 @@ int main(int argc, char** argv) {
   time(&start);
   engine.start();
 
+  //print engine running time
+  const float runtime = engine.elapsed_seconds();
+  dc.cout() << "Finished running engine in " << runtime << " seconds." <<std::endl;
+
   //write results
   if (saveprefix.size() > 0) {
     graph.save(saveprefix, graph_writer(),
